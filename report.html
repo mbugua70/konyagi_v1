@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>KONYOGI</title>
+
+  <link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+	<link rel="stylesheet" href="css/materialize.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+	<nav>
+		<div class=" topmenu left_menu">
+
+		</div>
+		<div class=" topmenu centered_menu">
+			REPORT
+		</div>
+		<div class=" topmenu right_menu">
+    <a href="index.html" ><i class="fa fa-home fa-2x"></i></a>
+    </div>
+		 </nav>
+
+
+ <div class="main_body">
+
+
+  <div class="row parcel_form">
+
+ <div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel  deep-orange darken-3">
+        <span class="white-text">
+          Your Details<br>
+           Name: <span id="rba_name"></span><br>
+           Phone: <span id="rba_phone"></span><br>
+           Region: <span id="rba_region"></span><br>
+
+        </span>
+        <br>
+        <a class="btn btn-small yellow darken-2" href="registration.html">Edit Details</a>
+      </div>
+    </div>
+  </div>
+
+<form id="data_form">
+           <input id="ba_name" name="ba_name"  type="hidden">
+           <input id="ba_phone" name="ba_phone"  type="hidden">
+           <input id="ba_region" name="ba_region"  type="hidden">
+           <input id="place" name="place" value="125HD"  type="hidden">
+
+
+
+
+
+        <!-- insert location details (gps) -->
+          <h1>LOCATION DETAILS</h1>
+
+
+      <div class="input-field col s12">
+          <span>Date</span><br>
+            <input id="sub_1_1" name="sub_1_1" placeholder="Date" type="date">
+
+        </div>
+
+          <div class="input-field col s12">
+          <span>Outlet Name</span><br>
+            <input id="sub_1_2" name="sub_1_2" placeholder="Outlet Name" type="text">
+
+        </div>
+          <div class="input-field col s12">
+          <span>Building or Premises Name</span><br>
+            <input id="sub_1_3" name="sub_1_3" placeholder="Building or Premises Name " type="text">
+
+        </div>
+          <div class="input-field col s12">
+          <span>Region</span><br>
+            <input id="sub_1_4" name="sub_1_4" placeholder="Region" type="text">
+        </div>
+
+
+        <div class="input-field col s12">
+          <span>Estate </span><br>
+            <input id="sub_1_5" name="sub_1_5" placeholder="Estate" type="text">
+        </div>
+
+
+
+         <div class="input-field col s12">
+          <span>Location (Area)</span><br>
+            <input id="sub_1_6" name="sub_1_6" placeholder="Location (Area)" type="text">
+        </div>
+
+
+        <div class="input-field col s12">
+          <span>Nearest Landmark </span><br>
+            <input id="sub_1_7" name="sub_1_7" placeholder="Nearest Landmark " type="text">
+        </div>
+
+        <h1>Questionnaire</h1>
+
+
+        <div class="input-field col s12">
+          <span>1. How many wines and spirits and bars  near it </span><br>
+          <input id="sub_1_8" name="sub_1_8" placeholder="Your Answer" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>2. Road or Lane</span><br>
+            <input id="sub_1_9" name="sub_1_9" placeholder="Your Answer" type="text">
+        </div>
+
+        <div class="input-field col s12">
+          <span>3. GPS Coordinates</span><br>
+            <!-- longitute and latitude -->
+            <div class="location_gps">
+              <h4 class="">Load your location</h4>
+              <div class="location_gps_two">
+                <input
+                  type="number"
+                  name="sub_1_10"
+                  id="longitude"
+                  placeholder="Longitude"
+                  readonly
+                />
+                <input
+                  type="number"
+                  name="sub_1_11"
+                  id="latitude"
+                  placeholder="Latitude"
+                  readonly
+                />
+              </div>
+              <button class="btn location_button" id="btn_location">
+                load
+                <div class="preloader-wrapper small active" id="preloader_one">
+                  <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </div>
+        </div>
+        <div class="input-field col s12">
+          <span>4. Contact Person</span><br>
+            <input id="sub_1_12" name="sub_1_12" placeholder="Your Answer" type="tel">
+        </div>
+        <div class="input-field col s12">
+          <span>5. Phone Number</span><br>
+            <input id="sub_1_13" name="sub_1_13" placeholder="Your Answer" type="tel">
+        </div>
+        <div class="input-field col s12">
+          <span>6. Type (Bar/Wines & Spirits)</span><br>
+          <select class="select_els" name="sub_1_14" id="sub_1_14" style="display: block;">
+            <option value="">Select your answer</option>
+            <option id="bar" value="Bar">Bar</option>
+            <option id="wines" value="Wines & Spirit">Wines & Spirit</option>
+          </select>
+        </div>
+        <div class="input-field col s12">
+          <span>7. Outlet Size (Sq Ft)</span><br>
+            <input id="sub_1_15" name="sub_1_15" placeholder="Your Answer" type="text">
+        </div>
+
+
+        <div class="input-field col s12">
+          <span>8. Seating Capacity (For Bars)</span><br>
+            <input id="sub_1_16" name="sub_1_16" placeholder="Your Answer" type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>9. Opening hours </span><br>
+            <input id="sub_1_17" name="sub_1_17"  type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>10. closing hours</span><br>
+            <input id="sub_1_18" name="sub_1_18" placeholder="Your Answer" type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>11. Estimated Footfall</span><br>
+            <input id="sub_1_19" name="sub_1_19" placeholder="Your Answer" type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>12. Preferred Activation Days</span><br>
+            <input id="sub_1_20" name="sub_1_20" placeholder="Your Answer" type="text">
+        </div>
+
+
+        <div class="input-field col s12">
+          <span>13. Preferred Activation Times </span><br>
+            <input id="sub_1_21" name="sub_1_21" placeholder="Your Answer" type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>14. Previous Activations (Yes/No)</span><br>
+          <select class="select_els" name="sub_1_22" id="sub_1_22" style="display: block;">
+            <option value="">Select your answer</option>
+            <option id="yes" value="Yes">Yes</option>
+            <option id="no" value="No">No</option>
+          </select>
+        </div>
+
+        <div class="input-field col s12">
+          <span>15. Brands Activated Previously</span><br>
+          <input id="sub_1_23" name="sub_1_23" placeholder="Your Answer" type="text">
+
+        </div>
+
+        <div class="input-field col s12">
+          <span>16. Activation Feedback (if any)</span><br>
+            <input id="sub_1_24" name="sub_1_24" placeholder="Your Answer" type="text">
+        </div>
+        <div class="input-field col s12">
+          <span>17. Licensing (Liquor License)(Valid/Invalid)</span><br>
+          <select class="select_els" name="sub_1_25" id="sub_1_25" style="display: block;">
+            <option value="">Select your answer</option>
+            <option id="valid" value="Yes">Valid</option>
+            <option id="invalid" value="No">Invalid</option>
+          </select>
+        </div>
+        <div class="input-field col s12">
+          <span>18. Social Media Presence (Yes/No)</span><br>
+          <select class="select_els" name="sub_1_26" id="sub_1_26" style="display: block;">
+            <option value="">Select your answer</option>
+            <option id="yes" value="Yes">Yes</option>
+            <option id="yes" value="No">No</option>
+          </select>
+        </div>
+
+
+
+        <div class="input-field col s12">
+          <span>19. Social Media Handles</span><br>
+            <input id="sub_1_27" name="sub_1_27" placeholder="Your Answer" type="text">
+        </div>
+
+
+        <div class="input-field col s12">
+          <span>20. Potential for Long-term Partnerships  (Yes/No)</span><br>
+          <select class="select_els" name="sub_1_28" id="sub_1_28" style="display: block;">
+            <option value="">Select your answer</option>
+            <option id="yes" value="Yes">Yes</option>
+            <option id="yes" value="No">No</option>
+          </select>
+        </div>
+
+
+        <div class="input-field col s12">
+          <span>21. Konyagi Stocked (Yes/No)</span><br>
+          <select class="select_els" name="sub_1_29" id="sub_1_29" style="display: block;">
+            <option value="">Select your answer</option>
+            <option id="yes" value="Yes">Yes</option>
+            <option id="yes" value="No">No</option>
+          </select>
+        </div>
+        <div class="input-field col s12">
+          <span>22. Additional Notes</span><br>
+            <input id="sub_1_30" name="sub_1_30" placeholder="Your Answer" type="text">
+        </div>
+
+           <div class="input-field col s12 center_it">
+        <button id="branding_btn" class="btn-large  margin-bottom waves-effect waves-light pick_color">  Upload Information <i class="fa fa-send"></i></button>
+      </div>
+
+</form>
+
+
+
+
+
+
+  </div>
+
+ </div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/localforage.min.js"></script>
+<script type="text/javascript" src="js/sweet.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/location.js"></script>
+<script type="text/javascript" src="util/tigo.js"></script>
+
+
+<script type="text/javascript">
+
+  // unchecked radio button
+$(document).ready(function(){
+  $('.row-checked input[type="radio"]').click(function(){
+    var parentDiv = $(this).closest('.row-checked');
+    var name = $(this).attr('name');
+    parentDiv.find('input[type="radio"]').each(function(){
+      if($(this).attr('name') !== name) {
+        $(this).prop('checked', false);
+      }
+    });
+  });
+});
+
+
+app.prefill();
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
